@@ -138,6 +138,7 @@ section {
 #testi {
   background: url("https://demo.cocobasic.com/seppo-html/images/quote_image_01.jpg") center no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 #testi .testi-container .testi-row {
   transition: 1s ease-out;

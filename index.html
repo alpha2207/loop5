@@ -53,7 +53,7 @@
     <section id="hero">
         <div class="container hero-container">
             <h1>Technology<br>& Visual Agency</h1>
-            <a href="#"><button class="green-btn">Learn More</button></a>
+            <a href="#"><button class="green-btn shadow">Learn More</button></a>
         </div>
     </section>
 
@@ -101,7 +101,7 @@
                     <p class="mute-text about-desc">Code the energy hidden in matter citizens of distant epochs from
                         which we spring drake equation
                         perga inconspicuous motespatch clean designed code and energy matter.</p>
-                    <a href="#"><button class="green-btn">Learn More</button></a>
+                    <a href="#"><button class="green-btn shadow">Learn More</button></a>
                 </div>
                 <div class="col-lg-6">
                     <img class="img-fluid" src="https://demo.cocobasic.com/seppo-html/images/about_01.jpg" alt="">
@@ -115,7 +115,7 @@
         <div class="container testi-container">
             <div class="row testi-row">
                 <div class="col">
-                    <div class="card">
+                    <div class="card shadow">
                         <img src="https://demo.cocobasic.com/seppo-html/images/quotes_image.png" alt="quote-icon"
                             class="img-fluid quotes_image">
                         <p class="mute-text desc-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -145,7 +145,7 @@
                 </div>
 
                 <div class="col">
-                    <div class="card">
+                    <div class="card shadow">
                         <img src="https://demo.cocobasic.com/seppo-html/images/quotes_image.png" alt="quote-icon"
                             class="img-fluid quotes_image">
                         <p class="mute-text desc-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -175,7 +175,7 @@
                 </div>
 
                 <div class="col">
-                    <div class="card">
+                    <div class="card shadow">
                         <img src="https://demo.cocobasic.com/seppo-html/images/quotes_image.png" alt="quote-icon"
                             class="img-fluid quotes_image">
                         <p class="mute-text desc-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -216,7 +216,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 justify-content-center d-flex">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card shadow" style="width: 18rem;">
                         <div class="card-body">
                             <p class="price-type">Basic</p>
                             <h5 class="card-title">$20</h5>
@@ -232,7 +232,7 @@
                 </div>
 
                 <div class="col-lg-4 justify-content-center d-flex">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card shadow" style="width: 18rem;">
                         <div class="card-body">
                             <p class="price-type">Standard</p>
                             <h5 class="card-title">$25</h5>
@@ -248,7 +248,7 @@
                 </div>
 
                 <div class="col-lg-4 justify-content-center d-flex">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card shadow" style="width: 18rem;">
                         <div class="card-body">
                             <p class="price-type">Premium</p>
                             <h5 class="card-title">$30</h5>
@@ -348,32 +348,32 @@
         let cardCount = document.querySelectorAll('.testi-row .col').length;
         document.querySelector('.year').textContent = Curryear;
 
-        let navLinks=document.querySelectorAll('.nav-link') 
+        let navLinks = document.querySelectorAll('.nav-link')
         for (let index = 0; index < navLinks.length; index++) {
             let e = navLinks[index];
-            e.addEventListener('click',()=>{
+            e.addEventListener('click', () => {
                 (document.getElementsByClassName('navbar-toggler')[0]).click();
             })
         }
-        
+
         for (let index = 0; index < leftArrow.length; index++) {
             let e = leftArrow[index];
-            index!=0 && e.addEventListener('click',()=>{
-            testiRow.style.transform += `translateX(${100/cardCount}%`;
-        })
+            index != 0 && e.addEventListener('click', () => {
+                testiRow.style.transform += `translateX(${100 / cardCount}%`;
+            })
         }
 
         for (let index = 0; index < rightArrow.length - 1; index++) {
             let e = rightArrow[index];
-            e.addEventListener('click',()=>{
-            testiRow.style.transform += `translateX(${-100/cardCount}%`;
-        })
+            e.addEventListener('click', () => {
+                testiRow.style.transform += `translateX(${-100 / cardCount}%`;
+            })
         }
-        window.addEventListener('scroll',()=>{
+        window.addEventListener('scroll', () => {
             console.log(document.body.scrollTop);
         })
 
-       
+
     </script>
     <!-- Bootstrap Script file link -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
