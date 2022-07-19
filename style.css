@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Rubik:wght@300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  font-family: "Rubik", "Poppins";
+  counter-reset: my-sec-counter;
+  scroll-behavior: smooth;
+  scroll-snap-align: start;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+nav {
+  background-color: rgb(0, 0, 0) !important;
+  padding: 1rem;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+nav a {
+  color: #fff;
+}
+nav .navbar-toggler {
+  border: none;
+}
+nav .navbar-brand {
+  color: #47ea4e;
+  width: 5rem;
+}
+nav .nav-item {
+  margin-right: 10px;
+}
+nav .nav-item a {
+  font-size: 14px;
+  padding: 15px;
+}
+nav .nav-item a:active, nav .nav-item a:hover, nav .nav-item a.active {
+  transition: 0.3s ease-in;
+  color: #47ea4e !important;
+}
+
+section {
+  position: relative;
+  padding: 8rem 1rem;
+  scroll-snap-align: center;
+  scroll-snap-stop: normal;
+}
+
+#hero {
+  height: 100vh;
+  width: 100vw;
+  background: url("https://demo.cocobasic.com/seppo-html/images/hero_image_01.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#hero .hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+#hero .hero-container h1 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+#services {
+  background-color: #000;
+  color: #fff;
+}
+#services .service-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#services .service-card h1 {
+  font-size: 264px;
+  font-weight: 700;
+  color: #000000;
+  text-shadow: -1px 0 #b3b3b3, 0 1px #b3b3b3, 1px 0 #b3b3b3, 0 -1px #b3b3b3;
+  line-height: 100%;
+  height: 165px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+#services .service-card h2 {
+  font-size: 46px;
+  font-weight: 600;
+}
+#services .service-card p {
+  font-size: 18px;
+  margin-bottom: 2rem;
+}
+
+#about .row div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#about .row div:not(.text-col) {
+  justify-content: center;
+}
+#about .text-col {
+  margin-bottom: 2rem;
+}
+#about .text-col .about-head {
+  font-size: 40px;
+  margin: 1.5rem 0 2rem 0;
+}
+#about .text-col .about-desc {
+  font-size: 20px;
+  margin-bottom: 3rem;
+}
+
+#testi {
+  background: url("https://demo.cocobasic.com/seppo-html/images/quote_image_01.jpg") center no-repeat;
+  background-size: cover;
+}
+#testi .testi-container .testi-row {
+  transition: 1s ease-out;
+  width: 300%;
+}
+#testi .testi-container .testi-row .col {
+  width: 100%;
+}
+#testi .card {
+  background-color: rgb(0, 0, 0);
+  padding: 2rem;
+}
+#testi .card .quotes_image {
+  width: 86px;
+  margin-bottom: 60px;
+}
+#testi .card .desc-text {
+  font-size: 1.3rem;
+  margin-bottom: 60px;
+}
+#testi .card .lower-testi {
+  display: flex;
+  align-items: center;
+}
+#testi .card .lower-testi .testi-pic {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  background: url("https://demo.cocobasic.com/seppo-html/images/quote_image_04.jpg") center no-repeat;
+}
+#testi .card .lower-testi .left {
+  color: #fff;
+  margin-right: auto;
+}
+#testi .card .lower-testi .right, #testi .card .lower-testi .right > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#testi .card .lower-testi .right > div {
+  width: 2.2rem;
+  height: 1.5em;
+}
+#testi .card .lower-testi .right .right-arrow {
+  margin-right: 1rem;
+  transition: 500ms ease;
+  background: url("https://demo.cocobasic.com/seppo-html/images/nav_right.png") center no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+#testi .card .lower-testi .right .right-arrow:hover {
+  transform: scale(1.2);
+}
+#testi .card .lower-testi .right .left-arrow {
+  transition: 500ms ease;
+  background: url("https://demo.cocobasic.com/seppo-html/images/nav_left.png") center no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+#testi .card .lower-testi .right .left-arrow:hover {
+  transform: scale(1.2);
+}
+
+#pricing .card {
+  position: relative;
+  padding: 1.2rem;
+  margin-bottom: 3rem;
+  border: 2px solid black;
+}
+#pricing .card::before {
+  /* Increment "my-sec-counter" by 1 */
+  counter-increment: my-sec-counter;
+  content: counter(my-sec-counter);
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  right: 0;
+  transform: translate(50%, -50%);
+  top: 0;
+  background: #fff;
+  font-weight: 700;
+  font-size: 4rem;
+  z-index: 100;
+}
+#pricing .card p {
+  text-transform: uppercase;
+}
+#pricing .card .price-type {
+  margin: 1rem 0 3rem 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+#pricing .card .card-title {
+  font-size: 100px;
+  color: #47ea4e;
+}
+#pricing .card ul {
+  margin: 3.5rem 0;
+}
+#pricing .card ul li {
+  font-size: 1.2rem;
+  margin: 1.2rem 0;
+}
+
+#team {
+  background: #000;
+}
+#team .container {
+  padding: 0 !important;
+}
+#team .team-card {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+#team .team-card img {
+  position: relative;
+}
+#team .team-card img::before {
+  content: "";
+  width: 100%;
+  height: 3rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #47ea4e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#team .team-card .card-body {
+  padding: 2rem;
+}
+#team .team-card .card-body h2 {
+  font-weight: 600;
+}
+#team .team-card .card-body .card-text {
+  margin: 2rem 0;
+  font-weight: 400;
+}
+#team .team-card .team-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 1.2rem;
+  background-color: #47ea4e;
+  border: none;
+  color: #fff;
+  height: 5rem;
+}
+
+footer {
+  background: rgb(40, 40, 40);
+  padding: 2rem;
+}
+footer .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+footer .container h5 {
+  color: #fff;
+  margin: 2rem 0;
+}
+
+.green-btn {
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  background-color: #47ea4e;
+  border: 1px solid #47ea4e;
+  transition: 0.4s ease-in;
+}
+.green-btn:hover {
+  background: transparent;
+  color: #47ea4e;
+}
+
+.tag {
+  text-transform: uppercase;
+  -webkit-clip-path: polygon(0 0, 100% 0, 76% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 76% 100%, 0% 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100px;
+  background-color: #47ea4e;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.tag p {
+  margin-bottom: 0 !important;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-right: 33px;
+}
+
+.mute-text {
+  color: #b3b3b3;
+}
+
+@media screen and (min-width: 720px) {
+  .hero-container h1 {
+    font-size: 72px !important;
+  }
+}
+@media screen and (max-width: 720px) {
+  .nav-item {
+    display: flex;
+    justify-content: center;
+  }
+  .nav-item a {
+    font-size: 1.2rem !important;
+  }
+
+  #about .text-col {
+    align-items: center !important;
+    text-align: center !important;
+  }
+}/*# sourceMappingURL=style.css.map */

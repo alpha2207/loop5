@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Rubik:wght@300;400;500&display=swap');
+$hero-bg: url('https://demo.cocobasic.com/seppo-html/images/hero_image_01.jpg');
+$card-count:3;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@mixin flexbox($dir: row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $dir;
+}
+
+
+html,
+body {
+    overflow-x: hidden;
+    font-family: 'Rubik', 'Poppins';
+    counter-reset: my-sec-counter;
+    scroll-behavior: smooth;
+    scroll-snap-align: start;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+nav {
+    background-color: rgba(0, 0, 0,1) !important;
+    padding: 1rem;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    a {
+        color: #fff;
+    }
+    .navbar-toggler{
+        border: none;
+    }
+    .navbar-brand {
+        color: #47ea4e;
+        width: 5rem;
+    }
+
+    .nav-item {
+        margin-right: 10px;
+        a {
+            font-size: 14px;
+            padding: 15px;
+
+            &:active,
+            &:hover,
+            &.active {
+                transition: .3s ease-in;
+                color: #47ea4e !important;
+            }
+        }
+    }
+
+}
+
+section {
+    position: relative;
+    padding: 8rem 1rem;
+    scroll-snap-align: center;
+    scroll-snap-stop: normal;
+}
+
+#hero {
+    
+    height: 100vh;
+    width: 100vw;
+  background: $hero-bg center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    @include flexbox(row);
+
+    .hero-container {
+        @include flexbox(column);
+        text-align: center;
+
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 40px;
+        }
+    }
+}
+
+// Service Section 
+#services {
+    background-color: #000;
+    color: #fff;
+
+    .service-card {
+        @include flexbox(column);
+        text-align: center;
+        margin-bottom: 2rem;
+
+        h1 {
+            font-size: 264px;
+            font-weight: 700;
+            color: #000000;
+            text-shadow: -1px 0 #b3b3b3, 0 1px #b3b3b3, 1px 0 #b3b3b3, 0 -1px #b3b3b3;
+            line-height: 100%;
+            height: 165px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 46px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 2rem;
+        }
+
+    }
+}
+
+// About Section
+#about {
+    .row {
+        div {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        div:not(.text-col){
+            justify-content: center;
+        }
+
+    }
+
+    .text-col {
+        margin-bottom: 2rem;
+        .about-head {
+            font-size: 40px;
+            margin: 1.5rem 0 2rem 0;
+        }
+
+        .about-desc {
+            font-size: 20px;
+            margin-bottom: 3rem;
+        }
+    }
+
+}
+
+// Testimonial Section
+#testi {
+    background: url('https://demo.cocobasic.com/seppo-html/images/quote_image_01.jpg') center no-repeat;
+    background-size: cover;
+    .testi-container{
+        .testi-row{
+            transition: 1s ease-out;
+            width: calc($card-count*100%);
+            .col{
+                width: 100%;
+            }
+        }
+    }
+    .card {
+        
+        background-color: rgba(0, 0, 0, 1);
+        padding: 2rem;
+
+        .quotes_image {
+            width: 86px;
+            margin-bottom: 60px;
+        }
+
+        .desc-text {
+            font-size: 1.3rem;
+            margin-bottom: 60px;
+        }
+
+        .lower-testi {
+            display: flex;
+            align-items: center;
+
+            .testi-pic {
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                margin-bottom: 10px;
+                background: url('https://demo.cocobasic.com/seppo-html/images/quote_image_04.jpg') center no-repeat;
+            }
+
+            .left {
+                color: #fff;
+                margin-right: auto;
+
+            }
+
+            .right {
+
+                &,
+                &>div {
+                    @include flexbox(row);
+                }
+
+                &>div {
+                    width: 2.2rem;
+                    height: 1.5em;
+                }
+
+                .right-arrow {
+                    margin-right: 1rem;
+                    transition: 500ms ease;
+                    background: url('https://demo.cocobasic.com/seppo-html/images/nav_right.png') center no-repeat;
+                    background-size: contain;
+                    cursor: pointer;
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                }
+
+                .left-arrow {
+                    transition: 500ms ease;
+                    background: url('https://demo.cocobasic.com/seppo-html/images/nav_left.png') center no-repeat;
+                    background-size: contain;
+                    cursor: pointer;
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Pricing Section
+#pricing {
+    .card {
+        position: relative;
+        padding: 1.2rem;
+        margin-bottom: 3rem;
+        border: 2px solid black;
+        &::before {
+            /* Increment "my-sec-counter" by 1 */
+            counter-increment: my-sec-counter;
+            content: counter(my-sec-counter);
+            height: 5rem;
+            width: 5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            position: absolute;
+            right: 0;
+            transform: translate(50%, -50%);
+            top: 0;
+            background: #fff;
+            font-weight: 700;
+            font-size: 4rem;
+            z-index: 100;
+
+        }
+        p{
+            text-transform: uppercase;
+        }
+        .price-type{
+            margin: 1rem 0 3rem 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+        .card-title{
+            font-size: 100px;
+            color: #47ea4e;
+        }
+        ul{
+            margin:3.5rem 0;
+            li{
+                font-size: 1.2rem;
+                margin: 1.2rem 0;
+            }
+        }
+    }
+}
+
+#team{
+    background: #000;
+    .container{
+        padding: 0 !important;
+    }
+    .team-card{
+        background-color: #fff;
+        @include flexbox(column);
+        margin: 2rem 0;
+        img{
+            position: relative;
+            &::before{
+                content: '';
+                width: 100%;
+                height: 3rem;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: #47ea4e;
+                @include flexbox(row);
+            }
+        }
+        .card-body{
+            padding:2rem;
+            h2{
+                font-weight: 600;
+            }
+            .card-text{
+                margin: 2rem 0;
+                font-weight: 400;
+            }
+
+        }
+        .team-btn{
+            width: 100%;
+            @include flexbox(row);
+            font-size: 1.2rem;
+            background-color: #47ea4e;
+            border: none;
+            color: #fff;
+            height:5rem;
+        }
+    }
+}
+
+footer{
+    background: rgb(40, 40, 40);
+    padding: 2rem;
+    .container{
+        @include flexbox(column);
+        text-align: center;
+        h5{
+            color: #fff;
+            margin: 2rem 0;
+        }
+    }
+   
+    
+}
+
+// Extra useful classes
+.green-btn {
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    // font-size: 1.1rem;
+    background-color: #47ea4e;
+    border: 1px solid #47ea4e;
+    transition: .4s ease-in;
+
+    &:hover {
+        background: transparent;
+        color: #47ea4e;
+    }
+}
+
+.tag {
+    text-transform: uppercase;
+    clip-path: polygon(0 0, 100% 0, 76% 100%, 0% 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 100px;
+    background-color: #47ea4e;
+    padding: 20px 0;
+    @include flexbox(row);
+
+    p {
+        margin-bottom: 0 !important;
+        font-size: 1.2rem;
+        color: #fff;
+        margin-right: 33px;
+    }
+}
+
+.mute-text {
+    color: #b3b3b3;
+}
+
+@media screen and (min-width:720px) {
+    .hero-container h1{
+        font-size: 72px !important;
+    }
+}
+@media screen and (max-width:720px) {
+    .nav-item{
+        display: flex;
+        justify-content: center;
+        a{
+            font-size: 1.2rem !important;
+        }
+    }
+    #about .text-col{
+        align-items: center !important;
+        text-align: center !important;
+    }}
