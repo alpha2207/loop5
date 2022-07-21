@@ -360,6 +360,11 @@ footer .container h5 {
   color: #b3b3b3;
 }
 
+.box-shadow{
+  box-shadow:0 .5rem 1rem rgba(0,0,0,.5)!important;
+  border-radius: 4px;
+}
+
 @media screen and (min-width: 720px) {
   .hero-container h1 {
     font-size: 72px !important;
